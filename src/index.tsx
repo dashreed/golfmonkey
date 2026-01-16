@@ -196,8 +196,8 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-20">
             <div class="flex items-center space-x-3">
-              <div class="w-12 h-12 bg-gm-cream rounded-full flex items-center justify-center">
-                <span class="text-gm-navy font-display font-bold text-xl">GM</span>
+              <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden p-1">
+                <img src="/images/gm-logo.png" alt="Golf Monkey Logo" class="w-full h-full object-contain" />
               </div>
               <span class="font-display text-2xl font-semibold tracking-wide">GOLF MONKEY</span>
             </div>
