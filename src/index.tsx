@@ -440,8 +440,17 @@ app.get('/', (c) => {
               </div>
             </div>
             <div class="flex justify-center">
-              <div class="w-64 h-64 bg-gm-cream rounded-full flex items-center justify-center">
-                <span class="text-gm-navy font-display font-bold text-6xl">GM</span>
+              <div class="relative">
+                <div class="w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-gm-gold">
+                  <img 
+                    src="/images/golfer-portrait.jpg" 
+                    alt="Golfer wearing Golf Monkey apparel"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="absolute -bottom-4 -left-4 bg-gm-gold text-gm-navy px-4 py-2 rounded-lg font-display font-bold shadow-lg">
+                  #PlayWell
+                </div>
               </div>
             </div>
           </div>
