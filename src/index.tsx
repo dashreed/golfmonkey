@@ -131,18 +131,36 @@ app.get('/', (c) => {
       </nav>
 
       {/* Hero Section */}
-      <section class="relative bg-gm-navy text-white py-24 overflow-hidden">
+      <section class="relative bg-gm-navy text-white py-16 md:py-24 overflow-hidden">
         <div class="absolute inset-0 opacity-5">
           <div class="absolute inset-0 bg-gradient-to-br from-white to-transparent"></div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">Elevate Your Game</h1>
-          <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 font-light">
-            Premium golf apparel crafted for players who demand style and performance on every hole.
-          </p>
-          <a href="#products" class="inline-block bg-gm-gold text-gm-navy px-10 py-4 font-semibold text-lg hover:bg-white transition-colors rounded">
-            Shop Collection
-          </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+              <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">Elevate Your Game</h1>
+              <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10 font-light">
+                Premium golf apparel crafted for players who demand style and performance on every hole.
+              </p>
+              <a href="#products" class="inline-block bg-gm-gold text-gm-navy px-10 py-4 font-semibold text-lg hover:bg-white transition-colors rounded">
+                Shop Collection
+              </a>
+            </div>
+            <div class="flex justify-center md:justify-end">
+              <div class="relative">
+                <div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gm-gold shadow-2xl">
+                  <img 
+                    src="/images/bryson.jpg" 
+                    alt="Bryson DeChambeau"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="absolute -bottom-4 -right-4 bg-gm-gold text-gm-navy px-6 py-2 rounded-full font-display font-bold shadow-lg">
+                  Pro Approved
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
