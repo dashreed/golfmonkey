@@ -127,7 +127,7 @@ const products = [
     description: 'Structured performance cap with embroidered Golf Monkey logo. Adjustable fit.',
     price: 39,
     image: '/images/navy-cap.jpg',
-    category: 'Accessories',
+    category: 'Headwear',
     colors: ['Navy/Cream'],
     sizes: ['One Size']
   },
@@ -170,6 +170,36 @@ const products = [
     category: 'Accessories',
     colors: ['Navy/Cream'],
     sizes: ['One Size']
+  },
+  {
+    id: 17,
+    name: 'Classic White Visor',
+    description: 'Crisp white performance visor with navy trim and embroidered Golf Monkey logo. Perfect for sunny rounds.',
+    price: 34,
+    image: '/images/white-visor.jpg',
+    category: 'Headwear',
+    colors: ['White/Navy'],
+    sizes: ['One Size']
+  },
+  {
+    id: 18,
+    name: 'Cream Bucket Hat',
+    description: 'Relaxed-fit bucket hat in cream with navy stripe detail. Full sun protection with signature style.',
+    price: 44,
+    image: '/images/cream-bucket-hat.jpg',
+    category: 'Headwear',
+    colors: ['Cream/Navy'],
+    sizes: ['S/M', 'L/XL']
+  },
+  {
+    id: 19,
+    name: 'Navy Pom Beanie',
+    description: 'Cozy ribbed knit beanie with cream pom-pom and embroidered logo. Essential for cold weather rounds.',
+    price: 38,
+    image: '/images/navy-pom-beanie.jpg',
+    category: 'Headwear',
+    colors: ['Navy/Cream'],
+    sizes: ['One Size']
   }
 ]
 
@@ -205,6 +235,7 @@ app.get('/', (c) => {
               <a href="/" class="hover:text-gm-gold transition-colors font-medium">Shop All</a>
               <a href="#polos" class="hover:text-gm-gold transition-colors font-medium">Polos</a>
               <a href="#outerwear" class="hover:text-gm-gold transition-colors font-medium">Outerwear</a>
+              <a href="#headwear" class="hover:text-gm-gold transition-colors font-medium">Headwear</a>
               <a href="#accessories" class="hover:text-gm-gold transition-colors font-medium">Accessories</a>
               <a href="#about" class="hover:text-gm-gold transition-colors font-medium">About</a>
             </div>
@@ -276,6 +307,13 @@ app.get('/', (c) => {
               class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-200 text-gm-navy hover:bg-gm-gold hover:text-gm-navy"
             >
               Outerwear
+            </button>
+            <button 
+              onclick="filterProducts('Headwear')" 
+              id="filter-Headwear"
+              class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-200 text-gm-navy hover:bg-gm-gold hover:text-gm-navy"
+            >
+              Headwear
             </button>
             <button 
               onclick="filterProducts('Accessories')" 
