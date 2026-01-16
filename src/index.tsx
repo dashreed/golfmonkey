@@ -247,16 +247,48 @@ app.get('/', (c) => {
       {/* Products Section */}
       <section id="products" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16">
+          <div class="text-center mb-10">
             <h2 class="font-display text-4xl font-bold text-gm-navy mb-4">Our Collection</h2>
             <p class="text-gray-600 max-w-xl mx-auto">
               Each piece is designed with the discerning golfer in mind. Quality fabrics, timeless designs, and the iconic Golf Monkey emblem.
             </p>
           </div>
           
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {/* Category Filter Tabs */}
+          <div class="flex flex-wrap justify-center gap-2 mb-12">
+            <button 
+              onclick="filterProducts('all')" 
+              id="filter-all"
+              class="filter-btn active px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gm-navy text-white"
+            >
+              All Products
+            </button>
+            <button 
+              onclick="filterProducts('Polos')" 
+              id="filter-Polos"
+              class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-200 text-gm-navy hover:bg-gm-gold hover:text-gm-navy"
+            >
+              Polos
+            </button>
+            <button 
+              onclick="filterProducts('Outerwear')" 
+              id="filter-Outerwear"
+              class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-200 text-gm-navy hover:bg-gm-gold hover:text-gm-navy"
+            >
+              Outerwear
+            </button>
+            <button 
+              onclick="filterProducts('Accessories')" 
+              id="filter-Accessories"
+              class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-200 text-gm-navy hover:bg-gm-gold hover:text-gm-navy"
+            >
+              Accessories
+            </button>
+          </div>
+          
+          <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {products.map((product) => (
-              <div key={product.id} class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl cursor-pointer">
+              <div key={product.id} data-category={product.category} class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl cursor-pointer transition-all duration-300">
                 <div class="aspect-square overflow-hidden bg-gray-100">
                   <img 
                     src={product.image} 
@@ -280,6 +312,46 @@ app.get('/', (c) => {
           </div>
         </div>
       </section>
+      
+      {/* Filter Script */}
+      <script dangerouslySetInnerHTML={{__html: `
+        function filterProducts(category) {
+          const cards = document.querySelectorAll('#products-grid .product-card');
+          const buttons = document.querySelectorAll('.filter-btn');
+          
+          // Update button styles
+          buttons.forEach(btn => {
+            btn.classList.remove('bg-gm-navy', 'text-white');
+            btn.classList.add('bg-gray-200', 'text-gm-navy');
+          });
+          
+          const activeBtn = document.getElementById('filter-' + category);
+          if (activeBtn) {
+            activeBtn.classList.remove('bg-gray-200', 'text-gm-navy');
+            activeBtn.classList.add('bg-gm-navy', 'text-white');
+          }
+          
+          // Filter products with animation
+          cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (category === 'all' || cardCategory === category) {
+              card.style.display = 'block';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 50);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        }
+      `}} />
 
       {/* Features Section */}
       <section class="bg-white py-20">
