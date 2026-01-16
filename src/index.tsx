@@ -80,6 +80,96 @@ const products = [
     category: 'Outerwear',
     colors: ['Navy/Cream'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL']
+  },
+  {
+    id: 8,
+    name: 'Navy Performance Windbreaker',
+    description: 'Lightweight wind-resistant jacket with cream piping details. Features the iconic Golf Monkey logo on chest.',
+    price: 139,
+    image: '/images/navy-windbreaker.jpg',
+    category: 'Outerwear',
+    colors: ['Navy/Cream'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL']
+  },
+  {
+    id: 9,
+    name: 'Navy Sweater Vest',
+    description: 'Classic diamond-knit sweater vest with cream trim. Perfect layering piece for cooler rounds.',
+    price: 109,
+    image: '/images/navy-sweater-vest.jpg',
+    category: 'Outerwear',
+    colors: ['Navy/Cream'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL']
+  },
+  {
+    id: 10,
+    name: 'Banana Leaf Performance Polo',
+    description: 'Bold tropical print polo with navy and green banana leaf pattern. Stand out on the course.',
+    price: 99,
+    image: '/images/banana-leaf-polo.jpg',
+    category: 'Polos',
+    colors: ['Navy/Green/White'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL']
+  },
+  {
+    id: 11,
+    name: 'Sage Herringbone Polo',
+    description: 'Refined sage green polo with subtle herringbone texture and navy contrast trim.',
+    price: 94,
+    image: '/images/sage-herringbone-polo.jpg',
+    category: 'Polos',
+    colors: ['Sage/Navy'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL']
+  },
+  {
+    id: 12,
+    name: 'Classic Navy Cap',
+    description: 'Structured performance cap with embroidered Golf Monkey logo. Adjustable fit.',
+    price: 39,
+    image: '/images/navy-cap.jpg',
+    category: 'Accessories',
+    colors: ['Navy/Cream'],
+    sizes: ['One Size']
+  },
+  {
+    id: 13,
+    name: 'Signature Leather Belt',
+    description: 'Premium brown leather belt with antique brass Golf Monkey buckle. A statement piece.',
+    price: 79,
+    image: '/images/leather-belt.jpg',
+    category: 'Accessories',
+    colors: ['Brown/Brass'],
+    sizes: ['S', 'M', 'L', 'XL']
+  },
+  {
+    id: 14,
+    name: 'Knit Headcover Set',
+    description: 'Set of 4 premium knit headcovers (Driver, 3W, 5W, Hybrid) with pom-pom tops and leather accents.',
+    price: 129,
+    image: '/images/headcovers-set.jpg',
+    category: 'Accessories',
+    colors: ['Navy/Cream'],
+    sizes: ['One Size']
+  },
+  {
+    id: 15,
+    name: 'Monkey Driver Headcover',
+    description: 'Plush monkey character headcover for your driver. The ultimate conversation starter.',
+    price: 49,
+    image: '/images/monkey-driver-cover.jpg',
+    category: 'Accessories',
+    colors: ['Navy/Cream'],
+    sizes: ['One Size']
+  },
+  {
+    id: 16,
+    name: 'Waffle Golf Towel Set',
+    description: 'Set of 2 premium waffle-weave golf towels with carabiner clip. Navy and cream options.',
+    price: 44,
+    image: '/images/golf-towels.jpg',
+    category: 'Accessories',
+    colors: ['Navy/Cream'],
+    sizes: ['One Size']
   }
 ]
 
@@ -115,6 +205,7 @@ app.get('/', (c) => {
               <a href="/" class="hover:text-gm-gold transition-colors font-medium">Shop All</a>
               <a href="#polos" class="hover:text-gm-gold transition-colors font-medium">Polos</a>
               <a href="#outerwear" class="hover:text-gm-gold transition-colors font-medium">Outerwear</a>
+              <a href="#accessories" class="hover:text-gm-gold transition-colors font-medium">Accessories</a>
               <a href="#about" class="hover:text-gm-gold transition-colors font-medium">About</a>
             </div>
             <div class="flex items-center space-x-4">
@@ -131,18 +222,25 @@ app.get('/', (c) => {
       </nav>
 
       {/* Hero Section */}
-      <section class="relative bg-gm-navy text-white py-24 overflow-hidden">
-        <div class="absolute inset-0 opacity-5">
-          <div class="absolute inset-0 bg-gradient-to-br from-white to-transparent"></div>
+      <section class="relative text-white overflow-hidden">
+        <div class="absolute inset-0">
+          <img 
+            src="/images/hero-golfer.jpg" 
+            alt="Golfer wearing Golf Monkey apparel"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-gm-navy/90 via-gm-navy/70 to-transparent"></div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">Elevate Your Game</h1>
-          <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 font-light">
-            Premium golf apparel crafted for players who demand style and performance on every hole.
-          </p>
-          <a href="#products" class="inline-block bg-gm-gold text-gm-navy px-10 py-4 font-semibold text-lg hover:bg-white transition-colors rounded">
-            Shop Collection
-          </a>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
+          <div class="max-w-2xl">
+            <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">Elevate Your Game</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light">
+              Premium golf apparel crafted for players who demand style and performance on every hole.
+            </p>
+            <a href="#products" class="inline-block bg-gm-gold text-gm-navy px-10 py-4 font-semibold text-lg hover:bg-white transition-colors rounded">
+              Shop Collection
+            </a>
+          </div>
         </div>
       </section>
 
