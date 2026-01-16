@@ -433,8 +433,8 @@ app.get('/', (c) => {
                 Our signature monkey emblem—complete with golf club—reminds us not to take ourselves too seriously while still demanding excellence in everything we create.
               </p>
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gm-cream rounded-full flex items-center justify-center">
-                  <span class="text-gm-navy font-display font-bold">GM</span>
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden p-1">
+                  <img src="/images/gm-logo.png" alt="Golf Monkey Logo" class="w-full h-full object-contain" />
                 </div>
                 <span class="font-display text-xl">Play Well. Look Better.</span>
               </div>
@@ -463,8 +463,8 @@ app.get('/', (c) => {
           <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
               <div class="flex items-center space-x-3 mb-6">
-                <div class="w-10 h-10 bg-gm-cream rounded-full flex items-center justify-center">
-                  <span class="text-gm-navy font-display font-bold">GM</span>
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden p-1">
+                  <img src="/images/gm-logo.png" alt="Golf Monkey Logo" class="w-full h-full object-contain" />
                 </div>
                 <span class="font-display text-xl font-semibold">GOLF MONKEY</span>
               </div>
